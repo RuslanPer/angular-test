@@ -1,15 +1,5 @@
-<!--<h1 class="default success">-->
-<!--  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, quia.-->
-<!--</h1>-->
-<!--<h1 [ngClass]="'default success'">-->
-<!--  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, quia.-->
-<!--</h1>-->
-<!--<h1 [ngClass]="{ default: true, success: isSuccess, error: !isSuccess }">-->
-<!--  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, quia.-->
-<!--</h1>-->
-<!--<h1 [ngClass]="{ 'default success': isSuccess }">-->
-<!--  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, quia.-->
-<!--</h1>-->
-<h1 [ngStyle]="{ color: 'blue' }">
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, quia.
-</h1>
+<div *ngFor="let fruit of fruits; even as even; odd as odd">
+  <h3 *ngIf="fruit.price > 7" [ngClass]="{ success: even, error: odd, italic: fruit.price > 15 }">
+    {{ fruit.name }} - {{ fruit.price }}
+  </h3>
+</div>
