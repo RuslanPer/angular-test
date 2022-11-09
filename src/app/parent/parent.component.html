@@ -1,6 +1,17 @@
 <div>
   <app-child (sendGradeEvent)="getGrade($event)"></app-child>
-  <div *ngFor="let el of grades; index as i; count as count; even as even">
-    {{ i }} -- {{ el }} count - {{ count }}
+  <!--  <div *ngFor="let el of grades; index as i; count as count; even as even">-->
+  <!--    {{ i }} &#45;&#45; {{ el }} count - {{ count }}-->
+  <!--  </div>-->
+  <div *ngFor="let lesson of lessons">
+    <h3>{{ lesson.title }}</h3>
+    <div>
+      <h3>
+        weekGrades:
+        <div *ngFor="let grade of lesson.weekGrades">
+          {{ grade.grade }}
+        </div>
+      </h3>
+    </div>
   </div>
 </div>
