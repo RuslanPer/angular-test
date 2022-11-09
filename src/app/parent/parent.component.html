@@ -1,17 +1,7 @@
-<div *ngIf="isLoading">
-  <h1>Loading...</h1>
+<input type="text" [(ngModel)]="value" />
+<div [ngSwitch]="value">
+  <div *ngSwitchCase="1">One</div>
+  <div *ngSwitchCase="2">Two</div>
+  <div *ngSwitchCase="3">Three</div>
+  <div *ngSwitchDefault>Unknown number</div>
 </div>
-
-<ng-container *ngIf="!isLoading">
-  <div *ngFor="let lesson of lessons">
-    <h3>{{ lesson.title }}</h3>
-    <div>
-      <h3>
-        weekGrades:
-        <div *ngFor="let grade of lesson.weekGrades">
-          {{ grade.grade }}
-        </div>
-      </h3>
-    </div>
-  </div>
-</ng-container>
