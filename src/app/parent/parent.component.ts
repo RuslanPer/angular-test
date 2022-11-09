@@ -1,5 +1,4 @@
 import { Component } from '@angular/core'
-import { Grade } from './child/child.component'
 
 @Component({
   selector: 'app-parent',
@@ -7,11 +6,9 @@ import { Grade } from './child/child.component'
   styleUrls: ['./parent.component.scss'],
 })
 export class ParentComponent {
-  math?: number
-  physic?: number
+  grades: string[] = ['math: 5', 'english: 3']
 
-  getGrade(value: Grade) {
-    this.math = value.math
-    this.physic = value.physic
+  getGrade(grade: string) {
+    this.grades.push(grade)
   }
 }
