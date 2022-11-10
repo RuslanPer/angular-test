@@ -3,8 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
-};
+  production: false,
+  baseUrl: 'https://social-network.samuraijs.com/api/1.1',
+  apiKey: '534d1fc3-fe11-4f41-abd0-cdc85b12d4a6',
+}
 
 /*
  * For easier debugging in development mode, you can import the following file
