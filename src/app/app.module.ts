@@ -5,10 +5,12 @@ import { AppComponent } from './app.component'
 import { FormsModule } from '@angular/forms'
 import { TodosComponent } from './components/todos/todos.component'
 import { HttpClientModule } from '@angular/common/http'
+import { ReactiveFormsModule } from '@angular/forms'
+import { LoginComponent } from './components/login/login.component'
 
 @NgModule({
-  declarations: [AppComponent, TodosComponent],
-  imports: [BrowserModule, FormsModule, HttpClientModule],
+  declarations: [AppComponent, TodosComponent, LoginComponent],
+  imports: [BrowserModule, FormsModule, HttpClientModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
