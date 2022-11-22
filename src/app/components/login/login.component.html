@@ -1,2 +1,9 @@
-<h1>{{ email.value }}</h1>
-<input id="email" type="text" [formControl]="email" />
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <input id="email" type="text" formControlName="email" />
+
+  <input id="password" type="password" formControlName="password" />
+  <button type="submit" [disabled]="!loginForm.valid">Submit</button>
+</form>
+
+<h2>{{ loginForm.value.email }}</h2>
+<h2>{{ loginForm.value.password }}</h2>
