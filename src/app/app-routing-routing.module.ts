@@ -1,15 +1,23 @@
 import { NgModule } from '@angular/core'
-import { RouterModule, Routes } from '@angular/router'
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router'
 
-import { LoginComponent } from './auth/components/login/login.component'
-import { TodosComponent } from './todos/components/todos/todos.component'
-import { UsersComponent } from './users/components/users/users.component'
-import { HomeComponent } from './home/components/home/home.component'
-
-const routes: Routes = []
+const routes: Routes = [
+  {
+    path: 'login',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
+  },
+  {
+    path: 'users',
+    loadChildren: () => import('./users/users.module').then(m => m.UsersModule),
+  },
+  {
+    path: 'todos',
+    loadChildren: () => import('./todos/todos.module').then(m => m.TodosModule),
+  },
+]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
   exports: [RouterModule],
 })
 export class AppRoutingRoutingModule {}
